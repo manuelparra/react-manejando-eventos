@@ -6,15 +6,26 @@ const Button = ({ onSmash, children }) => {
   );
 }
 
+const Toolbar = ({ onPlayMovie, onUploadImage }) => {
+  return (
+    <div>
+      <Button onSmash={onPlayMovie}>
+        Reproduciendo película
+      </Button>
+      <Button onSmash={onUploadImage}>
+        Subir imagen
+      </Button>
+    </div>
+  );
+}
+
 const App = () => {
   return (
     <div>
-      <Button onSmash={() => alert('¡Reproduciend!')}>
-        Reproducir película
-      </Button>
-      <Button onSmash={() => alert('¡Subiendo!')}>
-        Subiri imagen
-      </Button>
+      <Toolbar 
+        onPlayMovie={() => alert('¡Reproduciendo!')}
+        onUploadImage={() => alert('¡Subiendo!')}
+      />
     </div>
   );
 }
